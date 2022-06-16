@@ -4,3 +4,25 @@
 
 include:
   template: Jobs/Dependency-Scanning.gitlab-ci.yml
+
+default: 
+  image: ruby:2.7.1
+
+build-job:
+  stage: build
+  script:
+    - echo "hello"
+
+test-job1:
+  stage: test
+  script:
+    - echo "This job tests something BIGTIME"
+
+test-job2:
+  stage: test
+  script:
+    - echo "This job tests something, but takes more time than test-job1."
+    - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
+    - echo "which simulates a test that runs 20 seconds longer than test-job1"
+    - sleep 20
+
