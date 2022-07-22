@@ -11,7 +11,7 @@ default:
 build-job:
   stage: build
   script:
-    - echo "hello"
+    - echo "hello!"
 
 test-job1:
   stage: test
